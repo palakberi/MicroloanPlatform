@@ -69,6 +69,11 @@ public class User implements UserDetails {
     public String getUsername() {
         return email;
     }
+
+    @Override
+    public String getPassword() {
+        return password;
+    }
     
     @Override
     public boolean isAccountNonExpired() { return true; }
@@ -81,8 +86,4 @@ public class User implements UserDetails {
     
     @Override
     public boolean isEnabled() { return isVerified; }
-}
-
-enum UserRole {
-    BORROWER, LENDER, ADMIN
 }

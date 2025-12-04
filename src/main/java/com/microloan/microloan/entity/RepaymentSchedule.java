@@ -51,9 +51,17 @@ public class RepaymentSchedule {
         createdAt = LocalDateTime.now();
         status = PaymentStatus.PENDING;
     }
+    
+    // Explicit getters in case Lombok annotation processing isn't available during compile
+    public Long getId() { return id; }
+    public Integer getInstallmentNumber() { return installmentNumber; }
+    public Double getEmiAmount() { return emiAmount; }
+    public Double getPrincipalAmount() { return principalAmount; }
+    public Double getInterestAmount() { return interestAmount; }
+    public LocalDateTime getDueDate() { return dueDate; }
+    public PaymentStatus getStatus() { return status; }
+    public LocalDateTime getPaidAt() { return paidAt; }
+
 }
 
-enum PaymentStatus {
-    PENDING, PAID, OVERDUE, FAILED
-}
 
